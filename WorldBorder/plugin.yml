@@ -1,0 +1,10 @@
+name: WorldBorder
+main: Hydro\WorldBorder\WorldBorder
+version: 3.0.0
+author: Hydro
+api: 4.0.0
+description: "Simple WorldBorder for your server"
+permissions:
+  bypass.border:
+    default: op
+    description: "Bypass all borders"
