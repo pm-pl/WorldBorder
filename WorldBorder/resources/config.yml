@@ -1,0 +1,46 @@
+# The border builds out from the default spawn coords.
+# Say my world spawn is "30, 62, 30"; the border will have a 30 block offset.
+
+border:
+  #World name: size
+  world: 1500
+prefix: "[!]"
+#-------------------------#
+
+#What will happen when the player runs into the border?
+
+#Chat Message
+send-border-message: true
+border-message: "You are at the world border!"
+
+#Screen Title
+send-border-title: true
+border-title: "Turn around"
+
+#This warns console that player is at border
+send-console-log: true
+
+#Will the player fling away from the world edge?
+fling: true
+
+#If the player is operator and passes the border, what message will they recieve?
+bypassed-border-message: "You have bypassed the border!"
+
+#-------------------------#
+
+#What will happen if a player with no permission passes the border?
+
+#Force teleports the player to server spawn (This happens if they pearl past the WorldBorder - they will freeze)
+force-spawn: true
+
+#If the player is teleported to spawn, what message will they receive?
+tp-message: true
+teleport-spawn-message: "You passed the edge of the world, and were teleported to spawn!"
+
+#If the player is teleported to spawn, what screen title will they receive?
+teleport-title-message: true
+#await-5-seconds: true
+teleport-spawn-title: "Teleporting to spawn"
+
+#Logs if player crossed the border
+log-to-console: true
