@@ -5,5 +5,5 @@ branches:
 projects:
   WorldBorder:
     path: WorldBorder/
-    icon: assets/Border.PNG
+    icon: assets/Border.png
 ...
