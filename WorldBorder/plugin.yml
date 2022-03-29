@@ -5,6 +5,6 @@ author: Hydro
 api: 4.0.0
 description: "Simple WorldBorder for your server"
 permissions:
-  bypass.border:
+  worldborder.bypass:
     default: op
     description: "Bypass all borders"
