@@ -1,4 +1,5 @@
 <?php
+
 namespace Hydro\WorldBorder;
 
 use pocketmine\event\Listener;
