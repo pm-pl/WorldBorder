@@ -87,6 +87,7 @@ class WorldBorder extends PluginBase implements Listener {
 						} elseif (337.5 <= $yaw and $yaw < 360.0) {
 							$player->knockBack(0, 0, -1, -1.5);
 						}
+						$player->sendMessage($prefix . $this->getConfig()->get("bypassed-border-message"));
 					}
 				}
 			}
@@ -94,8 +95,6 @@ class WorldBorder extends PluginBase implements Listener {
 				if (!$player->hasPermission("worldborder.bypass")) {
                     $player->sendMessage($prefix . $this->getConfig()->get("border-message"));
 					$event->cancel();
-                } elseif ($player->hasPermission("worldborder.bypass")) {
-					$player->sendMessage($prefix . $this->getConfig()->get("bypassed-border-message"));
 				}
                 // if is beyond, get entity to teleport or freeze
                 if (!$player->hasPermission("worldborder.bypass")) {
