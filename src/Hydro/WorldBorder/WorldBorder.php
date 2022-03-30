@@ -33,7 +33,7 @@ class WorldBorder extends PluginBase implements Listener {
             $v2 = new Vector3($player->getLocation()->getX(), 0, $player->getLocation()->getZ());
 
 			// if is equal, get entity to fling
-            if (($v2->distance($v1) == $dat[$world->getDisplayName()] - 1) && (!$player->hasPermission("worldborder.bypass"))) {
+            if (($v2->distance($v1) == $dat[$world->getDisplayName()]) && (!$player->hasPermission("worldborder.bypass"))) {
 				if ($this->getConfig()->get("send-border-message", true)) {
 					$player->sendMessage($prefix . $this->getConfig()->get("border-message"));
 				}
