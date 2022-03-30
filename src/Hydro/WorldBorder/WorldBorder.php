@@ -115,33 +115,35 @@ class WorldBorder extends PluginBase implements Listener {
 				}
 				// if is beyond, get entity to teleport or freeze
 				if (!$player->hasPermission("worldborder.bypass")) {
-					if ($this->getConfig()->get("force-spawn", true)) {
-						$defaultWorld = Server::getInstance()->getWorldManager()->getDefaultWorld();
-						if ($defaultWorld === null) { // if world is not loaded, world will not be found.
-							foreach (array_diff(scandir($this->getServer()->getDataPath() . "worlds"),
-								[
-									"..",
-									"."
-								]
-									 ) as $loadWorldName) {
-								if ($this->getServer()->getWorldManager()->loadWorld($loadWorldName)) {
-									$loadedWorldNames = implode(", ", $loadWorldName);
-									$this->getLogger()->debug("Successfully loaded [" . $loadedWorldNames . "] for WorldBorder by Hydro");
+					if ($v2->distance($v1) >++ $dat[$world->getDisplayName()]) {
+						if ($this->getConfig()->get("force-spawn", true)) {
+							$defaultWorld = Server::getInstance()->getWorldManager()->getDefaultWorld();
+							if ($defaultWorld === null) { // if world is not loaded, world will not be found.
+								foreach (array_diff(scandir($this->getServer()->getDataPath() . "worlds"),
+									[
+										"..",
+										"."
+									]
+										 ) as $loadWorldName) {
+									if ($this->getServer()->getWorldManager()->loadWorld($loadWorldName)) {
+										$loadedWorldNames = implode(", ", $loadWorldName);
+										$this->getLogger()->debug("Successfully loaded [" . $loadedWorldNames . "] for WorldBorder by Hydro");
+									}
 								}
 							}
-						}
-						$safeSpawn = $defaultWorld->getSafeSpawn();
-						$player->teleport($safeSpawn);
-						if ($this->getConfig()->get("teleport-message", true)) {
-							$player->sendMessage($prefix . $this->getConfig()->get("teleport-spawn-message"));
-						}
-						if ($this->getConfig()->get("teleport-title-message", true)) {
-							$player->sendTitle($prefix . $this->getConfig()->get("teleport-spawn-title"));
-						}
-						if ($this->getConfig()->get("log-to-console", true)) {
-							$this->getLogger()->info($prefix . C::RED . $player->getName() . " attempted to bypass border, and was teleported to default world spawn.");
-						}
-					} // No need to throw an error exception for true configs on false. If no teleportation occurs, player will remain in border and receive no message.
+							$safeSpawn = $defaultWorld->getSafeSpawn();
+							$player->teleport($safeSpawn);
+							if ($this->getConfig()->get("teleport-message", true)) {
+								$player->sendMessage($prefix . $this->getConfig()->get("teleport-spawn-message"));
+							}
+							if ($this->getConfig()->get("teleport-title-message", true)) {
+								$player->sendTitle($prefix . $this->getConfig()->get("teleport-spawn-title"));
+							}
+							if ($this->getConfig()->get("log-to-console", true)) {
+								$this->getLogger()->info($prefix . C::RED . $player->getName() . " attempted to bypass border, and was teleported to default world spawn.");
+							}
+						} // No need to throw an error exception for true configs on false. If no teleportation occurs, player will remain in border and receive no message.
+					}
 				}
 			}
 		}
