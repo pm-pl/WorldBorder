@@ -23,7 +23,9 @@ send-console-log: true
 #Will the player fling away from the world edge?
 fling: true
 
-#If the player is operator and passes the border, what message will they recieve?
+#If the player is operator and passes the border, what message will they receive?
+bypassed-border-inform: true
+#What is the message sent
 bypassed-border-message: "You have bypassed the border!"
 
 #-------------------------#
