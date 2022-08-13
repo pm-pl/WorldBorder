@@ -3,8 +3,6 @@ Prevent players from passing a certain point in your server worlds!
 <br>
 Stops glitchers trying to get past the border locking them in an uncomfortable position!
 <br>
-The border unfortunately does **not** have a literal view like the icon!
-<br>
 <br>
 <img src="assets/Border.png" width="150"><img src="assets/WorldBorder.png" width="400">
 
@@ -12,6 +10,8 @@ The border unfortunately does **not** have a literal view like the icon!
 - Options to teleport player to spawn + send messages
 - Fling knockback at WorldBorder
 - Administrator bypass options + permission for bypass
+- Multi-world support
+- Option for visual picture like icon
 
 ## Common Questions ~
 **Q** : Can I teleport the player to spawn if they pass the border?
